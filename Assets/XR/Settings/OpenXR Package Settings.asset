@@ -1284,7 +1284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6096094d69d82cc40947df806f66ab34, type: 3}
   m_Name: OpenXRCompositionLayersFeature Standalone
   m_EditorClassIdentifier: Unity.XR.OpenXR::UnityEngine.XR.OpenXR.Features.CompositionLayers.OpenXRCompositionLayersFeature
-  m_enabled: 0
+  m_enabled: 1
   nameUi: Composition Layers Support
   version: 1.0.0
   featureIdInternal: com.unity.openxr.feature.compositionlayers
@@ -1569,7 +1569,12 @@ MonoBehaviour:
   m_Name: Standalone
   m_EditorClassIdentifier: Unity.XR.OpenXR::UnityEngine.XR.OpenXR.OpenXRSettings
   features:
+  - {fileID: 5158955489768556286}
+  - {fileID: -3237934413362844162}
+  - {fileID: 9048959513647365411}
+  - {fileID: 6205540306388297944}
   - {fileID: 4634081900301963856}
+  - {fileID: 3475727092188587602}
   - {fileID: 4480363035794315474}
   - {fileID: 3722943473858024833}
   - {fileID: -3141042017710539230}
@@ -1577,11 +1582,15 @@ MonoBehaviour:
   - {fileID: 6892805303074009103}
   - {fileID: -3751702736487177977}
   - {fileID: -7793545562517776255}
+  - {fileID: -657937941209935136}
+  - {fileID: 1597822269151516423}
   - {fileID: -8977632562425248923}
   - {fileID: -2772901402745074993}
   - {fileID: -3301997331829789470}
+  - {fileID: -1325843194393448415}
   - {fileID: 2925613671986483247}
   - {fileID: 224549788956242168}
+  - {fileID: 1169951612508036580}
   - {fileID: -4390211541592623087}
   - {fileID: -8299303527628955773}
   - {fileID: 4630267017020195495}
@@ -1590,16 +1599,7 @@ MonoBehaviour:
   - {fileID: 5875002031347697314}
   - {fileID: -8867517282898750767}
   - {fileID: -5631549070851253034}
-  - {fileID: 1169951612508036580}
-  - {fileID: 5158955489768556286}
-  - {fileID: 6205540306388297944}
-  - {fileID: -3237934413362844162}
-  - {fileID: 9048959513647365411}
   - {fileID: 7859596081689496664}
-  - {fileID: -1325843194393448415}
-  - {fileID: 1597822269151516423}
-  - {fileID: -657937941209935136}
-  - {fileID: 3475727092188587602}
   customLoaderName: 
   m_renderMode: 1
   m_latencyOptimization: 0
