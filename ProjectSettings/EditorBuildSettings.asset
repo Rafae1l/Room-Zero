@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main VR Scene.unity
     guid: f8567dd247d044f3ab0408425519fda5
+  - enabled: 1
+    path: Assets/Scenes/LabRoom.unity
+    guid: b3ad4598b3c7dce4895a3e0106c3d568
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

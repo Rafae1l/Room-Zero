@@ -2124,6 +2124,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PowerPuzzleManager
   powerStatusText: {fileID: 546689118}
+  cabinetDoorHinge: {fileID: 0}
+  cabinetOpenAngle: 90
 --- !u!1 &939680265 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1767192433, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
