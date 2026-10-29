@@ -1,8 +1,12 @@
 using UnityEngine;
+using TMPro;
+//using UnityEngine.InputSystem;
 
 public class PowerPuzzleManager : MonoBehaviour
 {
     private int currentStep = 0;
+
+    public TMP_Text powerStatusText;
 
     public void PressBlue()
     {
@@ -35,6 +39,10 @@ public class PowerPuzzleManager : MonoBehaviour
         if (currentStep == 2)
         {
             currentStep = 3;
+
+            powerStatusText.text = "POWER RESTORED";
+            powerStatusText.color = Color.green;
+
             Debug.Log("POWER RESTORED!");
         }
         else
@@ -42,10 +50,35 @@ public class PowerPuzzleManager : MonoBehaviour
             ResetPuzzle();
         }
     }
+    
+    /*private void Update()
+    {
+        if (Keyboard.current == null)
+            return;
+
+        if (Keyboard.current.bKey.wasPressedThisFrame)
+        {
+            PressBlue();
+        }
+
+        if (Keyboard.current.rKey.wasPressedThisFrame)
+        {
+            PressRed();
+        }
+
+        if (Keyboard.current.gKey.wasPressedThisFrame)
+        {
+            PressGreen();
+        }
+    }*/
 
     private void ResetPuzzle()
     {
         currentStep = 0;
+
+        powerStatusText.text = "POWER OFF";
+        powerStatusText.color = Color.red;
+
         Debug.Log("Wrong sequence - puzzle reset.");
     }
 }
