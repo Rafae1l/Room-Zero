@@ -8,6 +8,12 @@ public class PowerPuzzleManager : MonoBehaviour
 
     public TMP_Text powerStatusText;
 
+    //Drag CabinetDoorHinge into this field in the Inspector
+    public Transform cabinetDoorHinge;
+
+    //How far the cabinet door opens
+    public float cabinetOpenAngle = 90f;
+
     public void PressBlue()
     {
         if (currentStep == 0)
@@ -43,6 +49,8 @@ public class PowerPuzzleManager : MonoBehaviour
             powerStatusText.text = "POWER RESTORED";
             powerStatusText.color = Color.green;
 
+            OpenCabinet();
+
             Debug.Log("POWER RESTORED!");
         }
         else
@@ -50,8 +58,18 @@ public class PowerPuzzleManager : MonoBehaviour
             ResetPuzzle();
         }
     }
-    
-    /*private void Update()
+
+    private void OpenCabinet()
+    {
+        if (cabinetDoorHinge != null)
+        {
+            cabinetDoorHinge.localRotation =
+                Quaternion.Euler(0, cabinetOpenAngle, 0);
+        }
+    }
+
+    /*
+    private void Update()
     {
         if (Keyboard.current == null)
             return;
@@ -70,7 +88,8 @@ public class PowerPuzzleManager : MonoBehaviour
         {
             PressGreen();
         }
-    }*/
+    }
+    */
 
     private void ResetPuzzle()
     {
