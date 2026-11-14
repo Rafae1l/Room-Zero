@@ -9,10 +9,35 @@ public class PowerPuzzleManager : MonoBehaviour
 
     public TMP_Text powerStatusText;
 
-    //Cabinet hinge to open after the puzzle is solved
+    //Cabinet door hinge
     public Transform cabinetDoorHinge;
-
     public float cabinetOpenAngle = 90f;
+
+    //Main laboratory lights
+    public GameObject mainLights;
+
+    private void Start()
+    {
+        //Start with the power off
+        currentStep = 0;
+
+        if (powerStatusText != null)
+        {
+            powerStatusText.text = "POWER OFF";
+            powerStatusText.color = Color.red;
+        }
+
+        if (mainLights != null)
+        {
+            mainLights.SetActive(false);
+        }
+
+        //Make sure the cabinet starts closed
+        if (cabinetDoorHinge != null)
+        {
+            cabinetDoorHinge.localRotation = Quaternion.Euler(0, 0, 0);
+        }
+    }
 
     public void PressGreen()
     {
@@ -46,10 +71,7 @@ public class PowerPuzzleManager : MonoBehaviour
         {
             currentStep = 3;
 
-            powerStatusText.text = "POWER RESTORED";
-            powerStatusText.color = Color.green;
-
-            OpenCabinet();
+            RestorePower();
 
             Debug.Log("POWER RESTORED!");
         }
@@ -59,21 +81,64 @@ public class PowerPuzzleManager : MonoBehaviour
         }
     }
 
-    private void OpenCabinet()
+    private void RestorePower()
     {
+        //Update the power status display
+        if (powerStatusText != null)
+        {
+            powerStatusText.text = "POWER RESTORED";
+            powerStatusText.color = Color.green;
+        }
+
+        //Open the cabinet
         if (cabinetDoorHinge != null)
         {
             cabinetDoorHinge.localRotation =
                 Quaternion.Euler(0, cabinetOpenAngle, 0);
         }
+
+        //Turn on the laboratory lights
+        if (mainLights != null)
+        {
+            mainLights.SetActive(true);
+        }
     }
+
+    /*//Temporary keyboard testing - remove after testing
+    private void Update()
+    {
+        if (Keyboard.current == null)
+            return;
+
+        if (Keyboard.current.gKey.wasPressedThisFrame)
+        {
+            PressGreen();
+        }
+
+        if (Keyboard.current.bKey.wasPressedThisFrame)
+        {
+            PressBlue();
+        }
+
+        if (Keyboard.current.rKey.wasPressedThisFrame)
+        {
+            PressRed();
+        }
+    }*/
 
     private void ResetPuzzle()
     {
+        //Keep the puzzle solved once power is restored
+        if (currentStep == 3)
+            return;
+
         currentStep = 0;
 
-        powerStatusText.text = "POWER OFF";
-        powerStatusText.color = Color.red;
+        if (powerStatusText != null)
+        {
+            powerStatusText.text = "POWER OFF";
+            powerStatusText.color = Color.red;
+        }
 
         Debug.Log("Wrong sequence - puzzle reset.");
     }
