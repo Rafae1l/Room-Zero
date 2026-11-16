@@ -7,18 +7,18 @@ public class PowerPuzzleManager : MonoBehaviour
 {
     private int currentStep = 0;
 
+    [Header("Power Status")]
     public TMP_Text powerStatusText;
 
-    //Cabinet door hinge
-    public Transform cabinetDoorHinge;
-    public float cabinetOpenAngle = 90f;
-
-    //Main laboratory lights
+    [Header("Lighting")]
     public GameObject mainLights;
+
+    [Header("Security Keypad")]
+    public SecurityKeypadManager securityKeypad;
 
     private void Start()
     {
-        //Start with the power off
+        //Initialize the power puzzle
         currentStep = 0;
 
         if (powerStatusText != null)
@@ -27,20 +27,18 @@ public class PowerPuzzleManager : MonoBehaviour
             powerStatusText.color = Color.red;
         }
 
+        //Keep main laboratory lights off initially
         if (mainLights != null)
         {
             mainLights.SetActive(false);
-        }
-
-        //Make sure the cabinet starts closed
-        if (cabinetDoorHinge != null)
-        {
-            cabinetDoorHinge.localRotation = Quaternion.Euler(0, 0, 0);
         }
     }
 
     public void PressGreen()
     {
+        if (currentStep == 3)
+            return;
+
         if (currentStep == 0)
         {
             currentStep = 1;
@@ -54,6 +52,9 @@ public class PowerPuzzleManager : MonoBehaviour
 
     public void PressBlue()
     {
+        if (currentStep == 3)
+            return;
+
         if (currentStep == 1)
         {
             currentStep = 2;
@@ -67,13 +68,13 @@ public class PowerPuzzleManager : MonoBehaviour
 
     public void PressRed()
     {
+        if (currentStep == 3)
+            return;
+
         if (currentStep == 2)
         {
             currentStep = 3;
-
             RestorePower();
-
-            Debug.Log("POWER RESTORED!");
         }
         else
         {
@@ -83,55 +84,30 @@ public class PowerPuzzleManager : MonoBehaviour
 
     private void RestorePower()
     {
-        //Update the power status display
+        //Update the power monitor
         if (powerStatusText != null)
         {
             powerStatusText.text = "POWER RESTORED";
             powerStatusText.color = Color.green;
         }
 
-        //Open the cabinet
-        if (cabinetDoorHinge != null)
-        {
-            cabinetDoorHinge.localRotation =
-                Quaternion.Euler(0, cabinetOpenAngle, 0);
-        }
-
-        //Turn on the laboratory lights
+        //Turn on the main laboratory lights
         if (mainLights != null)
         {
             mainLights.SetActive(true);
         }
+
+        //Activate Puzzle 2
+        if (securityKeypad != null)
+        {
+            securityKeypad.ActivateKeypad();
+        }
+
+        Debug.Log("POWER RESTORED! Security keypad activated.");
     }
-
-    /*//Temporary keyboard testing - remove after testing
-    private void Update()
-    {
-        if (Keyboard.current == null)
-            return;
-
-        if (Keyboard.current.gKey.wasPressedThisFrame)
-        {
-            PressGreen();
-        }
-
-        if (Keyboard.current.bKey.wasPressedThisFrame)
-        {
-            PressBlue();
-        }
-
-        if (Keyboard.current.rKey.wasPressedThisFrame)
-        {
-            PressRed();
-        }
-    }*/
 
     private void ResetPuzzle()
     {
-        //Keep the puzzle solved once power is restored
-        if (currentStep == 3)
-            return;
-
         currentStep = 0;
 
         if (powerStatusText != null)
