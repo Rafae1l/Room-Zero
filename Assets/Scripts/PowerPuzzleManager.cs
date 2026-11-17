@@ -1,7 +1,6 @@
 
 using UnityEngine;
 using TMPro;
-//using UnityEngine.InputSystem;
 
 public class PowerPuzzleManager : MonoBehaviour
 {
@@ -18,7 +17,6 @@ public class PowerPuzzleManager : MonoBehaviour
 
     private void Start()
     {
-        //Initialize the power puzzle
         currentStep = 0;
 
         if (powerStatusText != null)
@@ -27,22 +25,23 @@ public class PowerPuzzleManager : MonoBehaviour
             powerStatusText.color = Color.red;
         }
 
-        //Keep main laboratory lights off initially
         if (mainLights != null)
         {
             mainLights.SetActive(false);
         }
     }
 
+    // STEP 1: Green
     public void PressGreen()
     {
+        Debug.Log("green button pressed");
         if (currentStep == 3)
             return;
 
         if (currentStep == 0)
         {
             currentStep = 1;
-            Debug.Log("Green correct!");
+            Debug.Log("Green correct! Now press Blue.");
         }
         else
         {
@@ -50,15 +49,17 @@ public class PowerPuzzleManager : MonoBehaviour
         }
     }
 
+    // STEP 2: Blue
     public void PressBlue()
     {
+        Debug.Log("blue button pressed");
         if (currentStep == 3)
             return;
 
         if (currentStep == 1)
         {
             currentStep = 2;
-            Debug.Log("Blue correct!");
+            Debug.Log("Blue correct! Now press Red.");
         }
         else
         {
@@ -66,8 +67,10 @@ public class PowerPuzzleManager : MonoBehaviour
         }
     }
 
+    // STEP 3: Red
     public void PressRed()
     {
+        Debug.Log("red button pressed");
         if (currentStep == 3)
             return;
 
@@ -84,20 +87,17 @@ public class PowerPuzzleManager : MonoBehaviour
 
     private void RestorePower()
     {
-        //Update the power monitor
         if (powerStatusText != null)
         {
-            powerStatusText.text = "POWER RESTORED";
+            powerStatusText.text = "POWER ON";
             powerStatusText.color = Color.green;
         }
 
-        //Turn on the main laboratory lights
         if (mainLights != null)
         {
             mainLights.SetActive(true);
         }
 
-        //Activate Puzzle 2
         if (securityKeypad != null)
         {
             securityKeypad.ActivateKeypad();
@@ -109,13 +109,6 @@ public class PowerPuzzleManager : MonoBehaviour
     private void ResetPuzzle()
     {
         currentStep = 0;
-
-        if (powerStatusText != null)
-        {
-            powerStatusText.text = "POWER OFF";
-            powerStatusText.color = Color.red;
-        }
-
-        Debug.Log("Wrong sequence - puzzle reset.");
+        Debug.Log("Wrong sequence! Start again with Green.");
     }
 }
