@@ -145,7 +145,7 @@ Material:
     - _RotationSpeed: 1
     - _ScreenSpaceReflections: 1
     - _ScreenSpaceReflectionsContributeTransparent: 1
-    - _Smoothness: 0.85
+    - _Smoothness: 0.95
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -162,8 +162,8 @@ Material:
     - _YScrollSpeed3: 1
     - _ZWrite: 0
     m_Colors:
-    - _BaseColor: {r: 0.8627451, g: 0.92156863, b: 0.9607843, a: 0.39215687}
-    - _Color: {r: 0.8627451, g: 0.92156863, b: 0.96078426, a: 0.39215687}
+    - _BaseColor: {r: 0.2745098, g: 0.5981038, b: 0.77254903, a: 0.3137255}
+    - _Color: {r: 0.27450976, g: 0.59810376, b: 0.77254903, a: 0.3137255}
     - _Color1: {r: 1, g: 1, b: 1, a: 1}
     - _Color2: {r: 1, g: 1, b: 1, a: 1}
     - _Color3: {r: 1, g: 1, b: 1, a: 1}
