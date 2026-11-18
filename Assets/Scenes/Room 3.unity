@@ -3155,6 +3155,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2012311777580034405, guid: 3f835b481d1ae3a4daa4df18f6c858a6, type: 3}
+      propertyPath: m_Name
+      value: Chemical Room
+      objectReference: {fileID: 0}
     - target: {fileID: 2014312624474136434, guid: 3f835b481d1ae3a4daa4df18f6c858a6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.059
@@ -3295,6 +3299,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -1.4568
       objectReference: {fileID: 0}
+    - target: {fileID: 7909139263903215547, guid: 3f835b481d1ae3a4daa4df18f6c858a6, type: 3}
+      propertyPath: m_Name
+      value: Circuit Room
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7733541950611387082, guid: 3f835b481d1ae3a4daa4df18f6c858a6, type: 3}
@@ -3311,9 +3319,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6764867963059002650, guid: 3f835b481d1ae3a4daa4df18f6c858a6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2141452758}
-    - targetCorrespondingSourceObject: {fileID: 6764867963059002650, guid: 3f835b481d1ae3a4daa4df18f6c858a6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1507373692}
     - targetCorrespondingSourceObject: {fileID: 7450925724200805284, guid: 3f835b481d1ae3a4daa4df18f6c858a6, type: 3}
       insertIndex: 7
       addedObject: {fileID: 2137686223}
@@ -3334,16 +3339,19 @@ PrefabInstance:
       addedObject: {fileID: 1477853067}
     - targetCorrespondingSourceObject: {fileID: 7450925724200805284, guid: 3f835b481d1ae3a4daa4df18f6c858a6, type: 3}
       insertIndex: 13
-      addedObject: {fileID: 1936387210}
-    - targetCorrespondingSourceObject: {fileID: 7450925724200805284, guid: 3f835b481d1ae3a4daa4df18f6c858a6, type: 3}
-      insertIndex: 14
       addedObject: {fileID: 733983241}
     - targetCorrespondingSourceObject: {fileID: 7450925724200805284, guid: 3f835b481d1ae3a4daa4df18f6c858a6, type: 3}
-      insertIndex: 15
+      insertIndex: 14
       addedObject: {fileID: 1971983756}
     - targetCorrespondingSourceObject: {fileID: 7450925724200805284, guid: 3f835b481d1ae3a4daa4df18f6c858a6, type: 3}
-      insertIndex: 17
+      insertIndex: 16
       addedObject: {fileID: 1932342277}
+    - targetCorrespondingSourceObject: {fileID: 7834294030341046304, guid: 3f835b481d1ae3a4daa4df18f6c858a6, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 1936387210}
+    - targetCorrespondingSourceObject: {fileID: 2798608686795003180, guid: 3f835b481d1ae3a4daa4df18f6c858a6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1507373692}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4775692966918290961, guid: 3f835b481d1ae3a4daa4df18f6c858a6, type: 3}
       insertIndex: -1
@@ -3378,6 +3386,16 @@ BoxCollider:
 --- !u!4 &452639633 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7450925724200805284, guid: 3f835b481d1ae3a4daa4df18f6c858a6, type: 3}
+  m_PrefabInstance: {fileID: 452639630}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &452639634 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2798608686795003180, guid: 3f835b481d1ae3a4daa4df18f6c858a6, type: 3}
+  m_PrefabInstance: {fileID: 452639630}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &452639635 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7834294030341046304, guid: 3f835b481d1ae3a4daa4df18f6c858a6, type: 3}
   m_PrefabInstance: {fileID: 452639630}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &463493930
@@ -8784,7 +8802,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1507373692}
   m_Layer: 0
-  m_Name: Chemical Room
+  m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8798,16 +8816,16 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1507373691}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.9999804, z: -0, w: -0.0062656705}
-  m_LocalPosition: {x: -2.2071748, y: 0.01699996, z: 0.5209782}
-  m_LocalScale: {x: 0.6024995, y: 0.6482214, z: 0.66419}
+  m_LocalRotation: {x: -0, y: 0.72353804, z: -0, w: 0.69028455}
+  m_LocalPosition: {x: 3.4422565, y: 0.03373587, z: 0.32428312}
+  m_LocalScale: {x: 0.6024993, y: 0.6482214, z: 0.6641899}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1556919100}
   - {fileID: 477647457}
   - {fileID: 1479445002}
   - {fileID: 2043648979}
-  m_Father: {fileID: 452639631}
+  m_Father: {fileID: 452639634}
   m_LocalEulerAnglesHint: {x: 0, y: 180.718, z: 0}
 --- !u!1 &1538175767
 GameObject:
@@ -12132,7 +12150,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1936387210}
   m_Layer: 0
-  m_Name: Circuit Room
+  m_Name: door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12146,16 +12164,16 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1936387209}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.9999804, z: -0, w: -0.006265671}
-  m_LocalPosition: {x: 3.339, y: -0.1, z: 0.89}
-  m_LocalScale: {x: 0.60249996, y: 0.64822, z: 0.66419005}
+  m_LocalRotation: {x: -0, y: 0.70098716, z: -0, w: -0.7131739}
+  m_LocalPosition: {x: -2.9991167, y: -0.096788265, z: 0.9758978}
+  m_LocalScale: {x: 0.60249996, y: 0.64822, z: 0.6641901}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2105415929}
   - {fileID: 730316915}
   - {fileID: 235190901}
   - {fileID: 307464496}
-  m_Father: {fileID: 452639633}
+  m_Father: {fileID: 452639635}
   m_LocalEulerAnglesHint: {x: 0, y: 180.718, z: 0}
 --- !u!1 &1944104395
 GameObject:
