@@ -11,6 +11,8 @@ public class SpecimenController : MonoBehaviour
 
     [Header("Puzzle States")]
     public bool hasPower = false;
+    public int chemicalsInserted = 0;
+    public int requiredChemicals = 3;
     public bool isStabilized = false;
 
     [Header("Events")]
@@ -21,7 +23,6 @@ public class SpecimenController : MonoBehaviour
 
     private void Start()
     {
-        // Create a material instance so we don't overwrite the project asset
         if (ringLightRenderer != null)
         {
             ringMaterial = ringLightRenderer.material;
@@ -30,7 +31,7 @@ public class SpecimenController : MonoBehaviour
         }
     }
 
-    // Call this from Room 1 when the circuit puzzle is solved
+    // Called by Room 1 (Circuit Puzzle)
     public void RestorePower()
     {
         if (hasPower) return;
@@ -39,24 +40,35 @@ public class SpecimenController : MonoBehaviour
         UpdateRingColor(poweredColor);
         onPowerRestored?.Invoke();
         Debug.Log("Specimen power restored!");
+        CheckStabilization();
     }
 
-    // Call this when the mixed chemical beaker snaps into the specimen tube
-    public void InsertStabilizer()
+    // Called each time one of the 3 chemicals snaps into a tube
+    public void AddChemical()
     {
-        // Optional: Require power before stabilizing
-        if (!hasPower)
-        {
-            Debug.Log("Cannot stabilize: Specimen has no power!");
-            return;
-        }
+        chemicalsInserted++;
+        Debug.Log($"Chemical added! ({chemicalsInserted}/{requiredChemicals})");
+        CheckStabilization();
+    }
 
+    // Optional: Call this in WhenUnselect() if the player pulls a vial back out
+    public void RemoveChemical()
+    {
+        chemicalsInserted = Mathf.Max(0, chemicalsInserted - 1);
+        Debug.Log($"Chemical removed! ({chemicalsInserted}/{requiredChemicals})");
+    }
+
+    private void CheckStabilization()
+    {
         if (isStabilized) return;
 
-        isStabilized = true;
-        UpdateRingColor(stabilizedColor);
-        onSpecimenStabilized?.Invoke();
-        Debug.Log("Specimen stabilized! Escape door unlocked!");
+        if (hasPower && chemicalsInserted >= requiredChemicals)
+        {
+            isStabilized = true;
+            UpdateRingColor(stabilizedColor);
+            onSpecimenStabilized?.Invoke();
+            Debug.Log("Specimen stabilized! Escape door unlocked!");
+        }
     }
 
     private void UpdateRingColor(Color targetColor)
@@ -64,14 +76,14 @@ public class SpecimenController : MonoBehaviour
         if (ringMaterial != null)
         {
             ringMaterial.color = targetColor;
-            ringMaterial.SetColor("_EmissionColor", targetColor * 2f); // * 2f gives a nice VR glow
+            ringMaterial.SetColor("_EmissionColor", targetColor * 2f);
         }
     }
 
-    // --- TESTING SHORTCUTS (Remove before final build) ---
+    // --- TESTING SHORTCUTS ---
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1)) RestorePower();
-        if (Input.GetKeyDown(KeyCode.Alpha2)) InsertStabilizer();
+        if (Input.GetKeyDown(KeyCode.Alpha2)) AddChemical();
     }
 }
