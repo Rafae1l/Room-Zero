@@ -517,6 +517,28 @@ MonoBehaviour:
   targetOpenXRApiVersion: 
   required: 0
   customRuntimeLoaderName: 
+--- !u!114 &-5575604682328782114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f6e474bff397ab5bbad2f935509283e, type: 3}
+  m_Name: MicrogestureOpenXRFeature Standalone
+  m_EditorClassIdentifier: Oculus.Interaction.UnityXR::Oculus.Interaction.Input.UnityXR.MicrogestureOpenXRFeature
+  m_enabled: 0
+  nameUi: Meta Hand Microgestures
+  version: 0.0.1
+  featureIdInternal: com.meta.openxr.feature.input.hand.microgestures
+  openxrExtensionStrings: XR_META_hand_tracking_microgestures XR_EXT_hand_interaction
+  company: Meta
+  priority: 0
+  targetOpenXRApiVersion: 
+  required: 0
+  customRuntimeLoaderName: 
 --- !u!114 &-5542317851922120852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -740,6 +762,30 @@ MonoBehaviour:
   targetOpenXRApiVersion: 
   required: 0
   customRuntimeLoaderName: 
+--- !u!114 &-3205361144716591375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac45ba33a6cb81f468c7bf0bfcd05775, type: 3}
+  m_Name: MetaHandTrackingDataSourceFeature Standalone
+  m_EditorClassIdentifier: Oculus.VR::Meta.XR.MetaHandTrackingDataSourceFeature
+  m_enabled: 0
+  nameUi: Meta XR Hand Tracking Data Source
+  version: 0.0.1
+  featureIdInternal: com.meta.openxr.feature.handtrackingdatasource
+  openxrExtensionStrings: XR_EXT_hand_tracking_data_source XR_META_hand_tracking_wide_motion_mode2 XR_EXT_hand_joints_motion_range
+  company: Meta
+  priority: 0
+  targetOpenXRApiVersion: 
+  required: 0
+  customRuntimeLoaderName: 
+  m_WideMotionModeEnabled: 0
+  m_ControllerDrivenHandPoses: 0
 --- !u!114 &-3141042017710539230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -848,6 +894,30 @@ MonoBehaviour:
   targetOpenXRApiVersion: 
   required: 0
   customRuntimeLoaderName: 
+--- !u!114 &-2287856840858823811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac45ba33a6cb81f468c7bf0bfcd05775, type: 3}
+  m_Name: MetaHandTrackingDataSourceFeature Android
+  m_EditorClassIdentifier: Oculus.VR::Meta.XR.MetaHandTrackingDataSourceFeature
+  m_enabled: 0
+  nameUi: Meta XR Hand Tracking Data Source
+  version: 0.0.1
+  featureIdInternal: com.meta.openxr.feature.handtrackingdatasource
+  openxrExtensionStrings: XR_EXT_hand_tracking_data_source XR_META_hand_tracking_wide_motion_mode2 XR_EXT_hand_joints_motion_range
+  company: Meta
+  priority: 0
+  targetOpenXRApiVersion: 
+  required: 0
+  customRuntimeLoaderName: 
+  m_WideMotionModeEnabled: 0
+  m_ControllerDrivenHandPoses: 0
 --- !u!114 &-2218682095215741774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -908,7 +978,7 @@ MonoBehaviour:
   nameUi: 'Android XR: Anchors'
   version: 0.1.0
   featureIdInternal: com.unity.openxr.feature.arfoundation-androidxr-anchor
-  openxrExtensionStrings: XR_ANDROID_trackables XR_ANDROID_device_anchor_persistence
+  openxrExtensionStrings: XR_ANDROID_trackables
   company: Unity Technologies
   priority: 0
   targetOpenXRApiVersion: 
@@ -1406,6 +1476,8 @@ MonoBehaviour:
   - {fileID: -9013865113031003090}
   - {fileID: 6475906414997201842}
   - {fileID: 2667397671741839668}
+  - {fileID: 3458259587788411763}
+  - {fileID: -2287856840858823811}
   customLoaderName: 
   m_renderMode: 1
   m_latencyOptimization: 1
@@ -1593,6 +1665,28 @@ MonoBehaviour:
   featureIdInternal: com.unity.openxr.feature.extension.performance_settings
   openxrExtensionStrings: XR_EXT_performance_settings
   company: Unity
+  priority: 0
+  targetOpenXRApiVersion: 
+  required: 0
+  customRuntimeLoaderName: 
+--- !u!114 &3458259587788411763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f6e474bff397ab5bbad2f935509283e, type: 3}
+  m_Name: MicrogestureOpenXRFeature Android
+  m_EditorClassIdentifier: Oculus.Interaction.UnityXR::Oculus.Interaction.Input.UnityXR.MicrogestureOpenXRFeature
+  m_enabled: 0
+  nameUi: Meta Hand Microgestures
+  version: 0.0.1
+  featureIdInternal: com.meta.openxr.feature.input.hand.microgestures
+  openxrExtensionStrings: XR_META_hand_tracking_microgestures XR_EXT_hand_interaction
+  company: Meta
   priority: 0
   targetOpenXRApiVersion: 
   required: 0
@@ -2079,6 +2173,9 @@ MonoBehaviour:
   - {fileID: 3475727092188587602}
   - {fileID: 4480363035794315474}
   - {fileID: 3722943473858024833}
+  - {fileID: 3910892073055864659}
+  - {fileID: 8136974856831185893}
+  - {fileID: 8186269476586784495}
   - {fileID: -3141042017710539230}
   - {fileID: -7413214358425138431}
   - {fileID: 6892805303074009103}
@@ -2093,23 +2190,22 @@ MonoBehaviour:
   - {fileID: 2925613671986483247}
   - {fileID: 224549788956242168}
   - {fileID: 1169951612508036580}
+  - {fileID: 3497418284163818435}
+  - {fileID: 7028248378383656174}
+  - {fileID: -5988989649945168292}
+  - {fileID: 8248121176314531059}
   - {fileID: -4390211541592623087}
   - {fileID: -8299303527628955773}
   - {fileID: 4630267017020195495}
   - {fileID: 4957491031883239300}
+  - {fileID: -1207612366436360785}
   - {fileID: 8729225950219220988}
   - {fileID: 5875002031347697314}
   - {fileID: -8867517282898750767}
   - {fileID: -5631549070851253034}
   - {fileID: 7859596081689496664}
-  - {fileID: 8186269476586784495}
-  - {fileID: 3497418284163818435}
-  - {fileID: 7028248378383656174}
-  - {fileID: 3910892073055864659}
-  - {fileID: -5988989649945168292}
-  - {fileID: 8248121176314531059}
-  - {fileID: -1207612366436360785}
-  - {fileID: 8136974856831185893}
+  - {fileID: -5575604682328782114}
+  - {fileID: -3205361144716591375}
   customLoaderName: 
   m_renderMode: 1
   m_latencyOptimization: 0
@@ -2567,7 +2663,7 @@ MonoBehaviour:
   nameUi: 'Android XR: Anchors'
   version: 0.1.0
   featureIdInternal: com.unity.openxr.feature.arfoundation-androidxr-anchor
-  openxrExtensionStrings: XR_ANDROID_trackables XR_ANDROID_device_anchor_persistence
+  openxrExtensionStrings: XR_ANDROID_trackables
   company: Unity Technologies
   priority: 0
   targetOpenXRApiVersion: 
